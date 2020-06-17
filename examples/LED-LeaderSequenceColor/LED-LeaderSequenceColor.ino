@@ -43,17 +43,17 @@ KEYMAPS(
 static void leaderNoOp(uint8_t seq_index) {}
 
 static const kaleidoscope::plugin::Leader::dictionary_t leader_dictionary[] PROGMEM =
-	LEADER_DICT(
-	            // Regular highlighting.
-	            {LEADER_SEQ(LEAD(0), Key_G, Key_B, Key_4), leaderNoOp},
-	            {LEADER_SEQ(LEAD(0), Key_G, Key_B, Key_R), leaderNoOp},
-	            // F will be `first_color` after G, F, not `used_color`.
-	            {LEADER_SEQ(LEAD(0), Key_G, Key_F, Key_F), leaderNoOp},
-	            {LEADER_SEQ(LEAD(0), Key_G, Key_F, Key_V), leaderNoOp},
-	            // G, T turns T to `timeout_color`.
-	            // Note: Timeout color not yet supported.
-	            {LEADER_SEQ(LEAD(0), Key_G, Key_T, Key_1), leaderNoOp},
-	            {LEADER_SEQ(LEAD(0), Key_G, Key_T), leaderNoOp});
+  LEADER_DICT(
+// Regular highlighting.
+{LEADER_SEQ(LEAD(0), Key_G, Key_B, Key_4), leaderNoOp},
+{LEADER_SEQ(LEAD(0), Key_G, Key_B, Key_R), leaderNoOp},
+// F will be `first_color` after G, F, not `used_color`.
+{LEADER_SEQ(LEAD(0), Key_G, Key_F, Key_F), leaderNoOp},
+{LEADER_SEQ(LEAD(0), Key_G, Key_F, Key_V), leaderNoOp},
+// G, T turns T to `timeout_color`.
+// Note: Timeout color not yet supported.
+{LEADER_SEQ(LEAD(0), Key_G, Key_T, Key_1), leaderNoOp},
+{LEADER_SEQ(LEAD(0), Key_G, Key_T), leaderNoOp});
 
 // Important: LeaderSequenceColor must currently precede Leader.
 KALEIDOSCOPE_INIT_PLUGINS(LEDControl, LEDOff, LeaderSequenceColorEffect, Leader);
